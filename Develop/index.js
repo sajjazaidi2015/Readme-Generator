@@ -4,6 +4,7 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const markdown = require("./utils/generateMarkdown");
 
+
 // TODO: Create an array of questions for user input
 const questions = [
   {
@@ -20,7 +21,7 @@ const questions = [
   {
     type: "input",
     name: "project_description",
-    message: "What's your Project description",
+    message: "What's your Project description",    
   },
   {
     type: "input",
@@ -42,6 +43,7 @@ const questions = [
     name: "test_instruction",
     message: "What's Test Instruction",
   },
+  
   {
     type: "list",
     name: "licences",
@@ -55,14 +57,32 @@ const questions = [
       "MIT License",
       "Boost Software License 1.0",
       "The Unlicense",
-    ],
+    ]
+  }
+  ,
+  {
+    type: "input",
+    name: "github",
+    message: "What is your GitHub username?"
   },
+  {
+    type: 'input',
+    message: 'What is your email address?',
+    name: 'email',
+    validate: function(email)
+    {
+        // Regex mail check (return true if valid mail)
+        return /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()\.,;\s@\"]+\.{0,1})+([^<>()\.,;:\s@\"]{2,}|[\d\.]+))$/.test(email);
+    }
+}
+
+  
 ];
 
 // TODO: Create a function to write README file
 function writeToFile(questions, answers) {
+  
   const data = markdown(answers);
-  console.log("🚀 ~ file: index.js ~ line 65 ~ writeToFile ~ data", data)
 fs.writeFile("README.md", data, (err) =>
     err ? console.log(err) : console.log("Success!")
   );
