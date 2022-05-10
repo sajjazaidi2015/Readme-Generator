@@ -49,10 +49,8 @@ ${contribution}`
 function renderTestInstruction(test_instruction) {
   if (test_instruction) {return  `
 # Test Instructions
-To run tests, run the following command:
-\`\`\` 
+To run tests, run the following command: 
 ${test_instruction}
-\`\`\`
 `
   } else {
     return '';

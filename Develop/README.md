@@ -1,9 +1,9 @@
 
 # Project Title 
-Sajjad
+Good Readme Generator
 
 # Project Description 
-des
+A user is prompted for their github username and is asked a series of questions. The answers populate a README generated for future projects.
 # Table of Content
   
  1. Installation
@@ -16,21 +16,19 @@ des
 # Installation
 To install necessary dependencies, run the following command:
 ``` 
-npm
+npm i
 ```
 
 
 # Usage
-usage
+Quickly generate READMEs for projects.
 
 # Contribution Guidline
-contribution 
+No contributing information for this project. 
 
 # Test Instructions
-To run tests, run the following command:
-``` 
-test
-```
+To run tests, run the following command: 
+node index.js
 
 
 # Licencse
